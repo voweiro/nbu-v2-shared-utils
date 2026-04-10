@@ -1,0 +1,13 @@
+{
+  "name": "@nbu/shared-utils",
+  "version": "1.0.0",
+  "description": "Shared utilities for all NBU-Net microservices",
+  "main": "index.js",
+  "author": "NBU-Net Engineering",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.0"
+  }
+}
