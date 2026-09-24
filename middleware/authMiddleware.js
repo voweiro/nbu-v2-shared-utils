@@ -12,7 +12,7 @@
 
 const jwt = require('jsonwebtoken');
 
-const authMiddleware = (options = {}) => (req, res, next) => {
+const authMiddleware = (options = {}) => async (req, res, next) => {
     const isOptional = options.optional === true;
 
     // ── Internal service-to-service bypass ────────────────────────────────────
@@ -61,6 +61,7 @@ const authMiddleware = (options = {}) => (req, res, next) => {
             programType:  decoded.programType,
         };
 
+        if (!await require('./studentHoldCheck')(req, res)) return;
         next();
     } catch (err) {
         if (isOptional) return next();

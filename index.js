@@ -19,6 +19,7 @@ const { createQueuePublisher } = require('./utils/queuePublisher');
 const { CacheService, createCacheService } = require('./utils/cacheService');
 
 module.exports = {
+    studentHoldCheck: require('./middleware/studentHoldCheck'),
     authMiddleware,
     errorMiddleware,
     rateLimiter,
@@ -29,4 +30,3 @@ module.exports = {
     CacheService,
     createCacheService,
 };
-
